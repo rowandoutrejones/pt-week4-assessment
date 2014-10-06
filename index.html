@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="todoList">
+<head>
+	<title>TO DO List</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="mainCtrl">
+	<h1>TO DO List</h1>
+
+	<form ng-submit="addData(itemtoAdd)">
+		<input type="text" ng-model="itemtoAdd">
+	</form>
+	
+	<ul>
+		<li ng-repeat="todo in todos">
+				{{todo}}
+				<button class="button" ng-click="removeData(todo)">&#9760;</button>
+		</li>
+	</ul>
+
+</body>
+	
+	
+	<script src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="todoService.js"></script>
+	<script type="text/javascript" src="mainCtrl.js"></script>
+
+</html>
